@@ -4,11 +4,11 @@
 
 <h2>Edit a Place</h2>
 
-<form action="/places/<%= @place.id %>/submit_edit">
+<%= form_tag "/places/#{@place.id}", :method => 'patch' do %>
   <p><label>Title:</label> <input value="<%= @place.title %>" name="title" size="30"></p>
   <p><label>Photo URL:</label> <input value="<%= @place.photo_url %>" name="url" size="80"></p>
   <p><label>Price:</label> <input name="price" value="<%= @place.price / 100.0 %>"></p>
   <p><label>Description:</label></p>
   <textarea name="desc" cols="80" rows="3"><%= @place.desc %></textarea>
   <p><button>Submit</button></p>
-</form>
+<% end %>

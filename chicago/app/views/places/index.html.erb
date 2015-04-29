@@ -5,7 +5,7 @@
   }
 </style>
 
-<p><%= link_to "Add a New Place", "/places/new" %></p>
+<p><%= link_to "Add a New Place", new_place_path %></p>
 
 <ul>
 
@@ -13,7 +13,7 @@
     <li>
       <%= link_to place.title, "/places/#{place.id}" %>
       (<%= number_to_currency(place.price / 100) %>)
-      <%= link_to "(delete)", "/places/#{place.id}/delete" %>
+      <%= link_to "Delete", "/places/#{place.id}", :method => 'delete' %>
     </li>
   <% end %>
 

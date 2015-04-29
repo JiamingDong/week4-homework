@@ -4,11 +4,11 @@
 
 <h2>Add a New Place</h2>
 
-<form action="/places/submit_new">
+<%= form_tag "/places" do %>
   <p><label>Title:</label> <input name="title" size="30"></p>
   <p><label>Photo URL:</label> <input name="url" size="80"></p>
   <p><label>Price:</label> <input name="price"></p>
   <p><label>Description:</label></p>
   <textarea name="desc" cols="80" rows="3"></textarea>
   <p><button>Submit</button></p>
-</form>
+<% end %>

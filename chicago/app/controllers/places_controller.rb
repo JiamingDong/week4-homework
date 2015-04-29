@@ -11,7 +11,7 @@ class PlacesController < ApplicationController
   def new
   end
 
-  def submitted
+  def create
     Place.create title: params[:title],
                  price: (params[:price].to_f * 100).to_i,
                  photo_url: params[:url],
@@ -34,7 +34,7 @@ class PlacesController < ApplicationController
     redirect_to "/places/#{@place.id}"
   end
 
-  def delete
+  def destroy
     Place.delete(params[:id])
     redirect_to root_path
   end
