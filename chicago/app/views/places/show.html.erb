@@ -26,7 +26,7 @@
 
 <p>
   <span class="price">Admission Price: <%= number_to_currency @place.price/100 %></span>
-  <%= link_to "Edit", "/places/#{@place.id}/edit" %>
+  <%= link_to "Edit", edit_place_path, :method => 'get' %>
 </p>
 
 <div>
@@ -37,7 +37,7 @@
 <h3 style="clear:both; margin-top: 100px">Reviews</h3>
 
 <p>Write a review</p>
-<%= form_tag "#{@place.id}/reviews/" do %>
+<%= form_tag(place_reviews_path(@place.id), :method => 'post') do %>
   <select name="rating">
     <option>5 star</option>
     <option>4 star</option>

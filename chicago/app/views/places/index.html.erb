@@ -11,9 +11,9 @@
 
   <% @places.each do |place| %>
     <li>
-      <%= link_to place.title, "/places/#{place.id}" %>
+      <%= link_to place.title, place_path(place.id), :method => 'get' %>
       (<%= number_to_currency(place.price / 100) %>)
-      <%= link_to "Delete", "/places/#{place.id}", :method => 'delete' %>
+      <%= link_to "(delete)", place_path(place.id), :method => 'delete' %>
     </li>
   <% end %>
 

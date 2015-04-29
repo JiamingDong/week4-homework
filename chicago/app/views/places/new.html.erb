@@ -4,7 +4,7 @@
 
 <h2>Add a New Place</h2>
 
-<%= form_tag "/places" do %>
+<%= form_tag(places_path, :method => 'post') do %>
   <p><label>Title:</label> <input name="title" size="30"></p>
   <p><label>Photo URL:</label> <input name="url" size="80"></p>
   <p><label>Price:</label> <input name="price"></p>

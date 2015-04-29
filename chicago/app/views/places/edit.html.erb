@@ -4,7 +4,7 @@
 
 <h2>Edit a Place</h2>
 
-<%= form_tag "/places/#{@place.id}", :method => 'patch' do %>
+<%= form_tag(place_path(@place.id), :method => 'patch') do %>
   <p><label>Title:</label> <input value="<%= @place.title %>" name="title" size="30"></p>
   <p><label>Photo URL:</label> <input value="<%= @place.photo_url %>" name="url" size="80"></p>
   <p><label>Price:</label> <input name="price" value="<%= @place.price / 100.0 %>"></p>
